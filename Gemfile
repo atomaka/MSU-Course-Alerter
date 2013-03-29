@@ -7,6 +7,8 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
+gem 'thin'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +23,16 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'brakeman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'rack-mini-profiler'
+  gem 'rails-footnotes'
+  # run `rails generate rails_footnotes:install`
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

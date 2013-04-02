@@ -1,4 +1,7 @@
 MsuCourseAlerter::Application.routes.draw do
+  resources :alerts
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -27,7 +27,7 @@ class Alert < ActiveRecord::Base
     @alerted
   end
 
-  def class_name
+  def course_name
     "#{self.department} #{self.course}"
   end
 

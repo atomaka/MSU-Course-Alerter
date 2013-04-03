@@ -27,7 +27,7 @@ class Alert < ActiveRecord::Base
   end
 
   def class_name
-    @department + ' ' + @course
+    "#{self.department} #{self.course}"
   end
 
   def sections

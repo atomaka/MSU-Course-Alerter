@@ -1,5 +1,5 @@
 class Alert < ActiveRecord::Base
-  attr_accessible :alerted, :course, :department, :user_id
+  attr_accessible :alerted, :course, :department, :user_id, :semester
 
   validates :department,  :presence     => true,
                           :length       => {
@@ -21,6 +21,7 @@ class Alert < ActiveRecord::Base
                           :numericality => {
                             only_integer:   true
                           }
+  validates :semester,    :presence     => true
 
   def alerted?
     @alerted

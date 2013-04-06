@@ -3,7 +3,7 @@ class AlertsController < ApplicationController
   # GET /alerts
   # GET /alerts.json
   def index
-    @alerts = Alert.where("user_id = #{current_user.id}")
+    @alerts = Alert.user_alerts(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

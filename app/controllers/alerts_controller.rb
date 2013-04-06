@@ -1,4 +1,5 @@
 class AlertsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /alerts
   # GET /alerts.json
   def index

@@ -23,6 +23,10 @@ class Alert < ActiveRecord::Base
                           }
   validates :semester,    :presence     => true
 
+  scope :user_alerts, lambda { |user_id| 
+    where('Alerts.user_id = ?', user_id)
+  }
+
   def alerted?
     @alerted
   end
@@ -33,9 +37,5 @@ class Alert < ActiveRecord::Base
 
   def sections
 
-  end
-
-  def self.user_alerts(user_id)
-    Alert.where("user_id = #{user_id}")
   end
 end

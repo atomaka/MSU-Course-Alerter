@@ -1,5 +1,11 @@
 MsuCourseAlerter::Application.routes.draw do
+  get "home/index"
+
+  devise_for :users
+
   resources :alerts
+
+  root :to => "home#index"
 
 
   # The priority is based upon order of creation:

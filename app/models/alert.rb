@@ -17,10 +17,10 @@ class Alert < ActiveRecord::Base
                           :format       => {
                             :with           => /\A[0-9]+[A-Za-z]?\Z/
                           }
-  validates :user_id,     :presence     => true,
-                          :numericality => {
-                            only_integer:   true
-                          }
+  # validates :user_id,     :presence     => true,
+  #                         :numericality => {
+  #                           only_integer:   true
+  #                         }
   validates :semester,    :presence     => true
 
   scope :user_alerts, lambda { |user_id| 

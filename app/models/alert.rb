@@ -1,6 +1,7 @@
 class Alert < ActiveRecord::Base
-  attr_accessible :alerted, :course, :department, :semester
+  attr_accessible :course, :department, :semester
   attr_protected :user_id
+  attr_protected :alerted
 
   validates :department,  :presence     => true,
                           :length       => {

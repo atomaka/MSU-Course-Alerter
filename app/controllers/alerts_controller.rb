@@ -1,5 +1,6 @@
 class AlertsController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /alerts
   # GET /alerts.json
   def index
@@ -13,7 +14,7 @@ class AlertsController < ApplicationController
   # GET /alerts/1
   # GET /alerts/1.json
   def show
-    @alert = Alert.user_alerts(current_user.id).find(params[:id])
+    @alert = Alert.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,7 +34,7 @@ class AlertsController < ApplicationController
 
   # GET /alerts/1/edit
   def edit
-    @alert = Alert.user_alerts(current_user.id).find(params[:id])
+    @alert = Alert.find(params[:id])
   end
 
   # POST /alerts
@@ -54,7 +55,7 @@ class AlertsController < ApplicationController
   # PUT /alerts/1
   # PUT /alerts/1.json
   def update
-    @alert = Alert.user_alerts(current_user.id).find(params[:id])
+    @alert = Alert.find(params[:id])
 
     respond_to do |format|
       if @alert.update_attributes(params[:alert])
@@ -68,7 +69,7 @@ class AlertsController < ApplicationController
   # DELETE /alerts/1
   # DELETE /alerts/1.json
   def destroy
-    @alert = Alert.user_alerts(current_user.id).find(params[:id])
+    @alert = Alert.find(params[:id])
     @alert.destroy
 
     respond_to do |format|

@@ -1,5 +1,5 @@
 class Alert < ActiveRecord::Base
-  attr_accessible :course, :department, :semester
+  attr_accessible :course, :department, :semester, :sections
   attr_protected :user_id
   attr_protected :alerted
 
@@ -19,14 +19,9 @@ class Alert < ActiveRecord::Base
                           :format       => {
                             :with           => /\A[0-9]+[A-Za-z]?\Z/
                           }
-  # validates :user_id,     :presence     => true,
-  #                         :numericality => {
-  #                           only_integer:   true
-  #                         }
   validates :semester,    :presence     => true
-  validates :sections,    :presence     => true
 
-  serialize :sections
+  serialize :sections, Array
 
   scope :user_alerts, lambda { |user_id| 
     where('Alerts.user_id = ?', user_id)
@@ -38,9 +33,5 @@ class Alert < ActiveRecord::Base
 
   def course_name
     "#{self.department} #{self.course}"
-  end
-
-  def sections
-
   end
 end

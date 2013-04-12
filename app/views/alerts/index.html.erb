@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:department) %></th>
       <th><%= model_class.human_attribute_name(:course) %></th>
+      <th><%= model_class.human_attribute_name(:sections) %></th>
       <th><%= model_class.human_attribute_name(:semester) %></th>
       <th><%= model_class.human_attribute_name(:alerted) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -22,6 +23,7 @@
         <td><%= alert.user_id %></td>
         <td><%= alert.department %></td>
         <td><%= alert.course %></td>
+        <td><%= alert.sections.join(', ') %></td>
         <td><%= alert.semester %></td>
         <td><%= alert.alerted %></td>
         <td><%=l alert.created_at %></td>

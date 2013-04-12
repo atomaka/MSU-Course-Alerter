@@ -10,6 +10,8 @@
   <dd><%= @alert.department %></dd>
   <dt><strong><%= model_class.human_attribute_name(:course) %>:</strong></dt>
   <dd><%= @alert.course %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sections) %>:</strong></dt>
+  <dd><%= @alert.sections.join(', ') %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:semester) %>:</strong></dt>
   <dd><%= @alert.semester %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alerted) %>:</strong></dt>

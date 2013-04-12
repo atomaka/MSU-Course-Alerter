@@ -1,4 +1,7 @@
 <%= form_for @alert, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @alert.errors.any? %>
+    <%= @alert.errors.full_messages.join(',') %>
+  <% end %>
   <div class="control-group">
     <%= f.label :department, :class => 'control-label' %>
     <div class="controls">
@@ -9,6 +12,18 @@
     <%= f.label :course, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :course, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sections, :class => 'control-label' %>
+    <div class="controls">
+      <% 3.times do |key| %>
+        <%= text_field_tag( 
+              'alert[sections][]', 
+              params[:section] ? params[:section][key] : @alert.sections[key], 
+              :class => 'text_field, span1' 
+        ) %>
+      <% end %>
     </div>
   </div>
   <div class="control-group">

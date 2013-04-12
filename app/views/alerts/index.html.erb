@@ -5,29 +5,25 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:department) %></th>
-      <th><%= model_class.human_attribute_name(:course) %></th>
-      <th><%= model_class.human_attribute_name(:sections) %></th>
-      <th><%= model_class.human_attribute_name(:semester) %></th>
-      <th><%= model_class.human_attribute_name(:alerted) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Class</th>
+      <th>Sections</th>
+      <th>Semester</th>
+      <th>Alerted</th>
+      <th>Created</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @alerts.each do |alert| %>
       <tr>
-        <td><%= link_to alert.id, alert_path(alert) %></td>
-        <td><%= alert.user_id %></td>
-        <td><%= alert.department %></td>
-        <td><%= alert.course %></td>
+        <td><%= alert.course_name %></td>
         <td><%= alert.sections.reject { |v| v.blank? }.join(', ') %></td>
         <td><%= alert.semester %></td>
         <td><%= alert.alerted %></td>
-        <td><%=l alert.created_at %></td>
+        <td><%= alert.created_at.to_datetime.strftime("%d %b %Y") %></td>
         <td>
+          <!--<%= link_to t('.show', :default => t("helpers.links.show")),
+                      alert_path(alert), :class => 'btn btn-mini' %>-->
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_alert_path(alert), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

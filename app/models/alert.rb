@@ -24,6 +24,9 @@ class Alert < ActiveRecord::Base
   #                           only_integer:   true
   #                         }
   validates :semester,    :presence     => true
+  validates :sections,    :presence     => true
+
+  serialize :sections
 
   scope :user_alerts, lambda { |user_id| 
     where('Alerts.user_id = ?', user_id)

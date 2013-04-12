@@ -1,7 +1,13 @@
 <%= form_for @alert, :html => { :class => 'form-horizontal' } do |f| %>
-  <% if @alert.errors.any? %>
-    <%= @alert.errors.full_messages.join(',') %>
-  <% end %>
+  <div class="control-group">
+    <ul>
+    <% if @alert.errors.any? %>
+      <%= @alert.errors.full_messages.each do |full_message| %>
+      <li><%= full_message %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
   <div class="control-group">
     <%= f.label :department, :class => 'control-label' %>
     <div class="controls">

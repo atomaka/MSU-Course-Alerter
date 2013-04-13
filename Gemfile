@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'thin'
 
 gem 'devise'
-
+gem 'devise_pam_authenticatable'
 gem 'cancan'
 
 

@@ -10,8 +10,6 @@ gem 'sqlite3'
 gem 'thin'
 
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-kerberos'
 
 gem 'cancan'
 

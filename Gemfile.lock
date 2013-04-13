@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/atomaka/devise_pam_authenticatable.git
+  revision: 0f735fbb3926a46b649c5ef1fa35a7dcd0d6d1f8
+  branch: ruby19-update
+  specs:
+    devise_pam_authenticatable (1.0.3)
+      rpam-ruby19
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -127,6 +135,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rpam-ruby19 (1.2.1)
     ruby2ruby (2.0.3)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -181,6 +190,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  devise_pam_authenticatable!
   jquery-rails
   less-rails
   meta_request

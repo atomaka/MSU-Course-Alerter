@@ -10,7 +10,9 @@ gem 'sqlite3'
 gem 'thin'
 
 gem 'devise'
-
+gem 'devise_pam_authenticatable',
+  :git      => 'git://github.com/atomaka/devise_pam_authenticatable.git',
+  :branch   => 'ruby19-update'
 gem 'cancan'
 
 

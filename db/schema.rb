@@ -11,18 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413054153) do
+ActiveRecord::Schema.define(:version => 20130424230817) do
 
-  create_table "alerts", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "department"
-    t.string   "course"
-    t.boolean  "alerted",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.string   "semester"
-    t.text     "sections"
-  end
+# Could not dump table "alerts" because of following StandardError
+#   Unknown type 'enum' for column 'semester'
 
   create_table "roles", :force => true do |t|
     t.string   "name"

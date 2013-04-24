@@ -72,6 +72,8 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    enumerated_attribute (0.2.16)
+      meta_programming (>= 0.2.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -97,6 +99,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_programming (0.2.2)
     meta_request (0.2.3)
       rack-contrib
       railties
@@ -191,6 +194,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   devise-kerberos-authenticatable!
+  enumerated_attribute
   jquery-rails
   less-rails
   meta_request

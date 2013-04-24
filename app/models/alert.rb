@@ -1,4 +1,5 @@
 class Alert < ActiveRecord::Base
+  enum_attr :semester, %w(US13 FS13 SS14)
   attr_accessible :course, :department, :semester, :sections
   attr_protected :user_id
   attr_protected :alerted

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424230817) do
+ActiveRecord::Schema.define(:version => 20130425230007) do
 
 # Could not dump table "alerts" because of following StandardError
 #   Unknown type 'enum' for column 'semester'
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20130424230817) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|

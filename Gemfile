@@ -14,8 +14,6 @@ gem 'devise-kerberos-authenticatable',
   :git => 'git://github.com/atomaka/devise-kerberos-authenticatable.git'
 gem 'cancan'
 
-gem 'enumerated_attribute'
-
 
 # Gems used only for assets and not required
 # in production environments by default.

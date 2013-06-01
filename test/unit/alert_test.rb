@@ -9,7 +9,7 @@ class AlertTest < ActiveSupport::TestCase
     @user_one = users(:one)
   end
 
-  test "creating a new alert creates an alert" do
+  test "should create a new alert" do
     assert_kind_of Alert, Alert.new
   end
 
@@ -25,8 +25,11 @@ class AlertTest < ActiveSupport::TestCase
     assert !Alert.user_alerts(@user_one).empty?
   end
 
-  #test "should only return alerts for correct user when asked" do
-    # again, should test with actual user
-    #assert Alert.user_alerts(@user_one).all? { |a| a == @user_one }
-  #end
+  test "should only return alerts for correct user when asked" do
+    assert Alert.user_alerts(@user_one).all? { |a| a.user_id == @user_one.id }
+  end
+
+  test "should return the full course name" do
+    assert_equal @alert_one.course_name, "CSE 101"
+  end
 end

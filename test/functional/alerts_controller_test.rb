@@ -3,6 +3,8 @@ require 'test_helper'
 class AlertsControllerTest < ActionController::TestCase
   setup do
     @alert = alerts(:one)
+    @alert = alerts(:two)
+    @alert = alerts(:three)
   end
 
   test "should get index" do

@@ -3,8 +3,10 @@ require 'test_helper'
 class AlertsControllerTest < ActionController::TestCase
   setup do
     @alert = alerts(:one)
-    @alert = alerts(:two)
-    @alert = alerts(:three)
+    
+    @user = users(:one)
+
+    sign_in :user, @user
   end
 
   test "should get index" do
@@ -20,7 +22,12 @@ class AlertsControllerTest < ActionController::TestCase
 
   test "should create alert" do
     assert_difference('Alert.count') do
-      post :create, alert: { alerted: @alert.alerted, course: @alert.course, department: @alert.department, user_id: @alert.user_id }
+      post :create, alert: { 
+        course: @alert.course, 
+        department: @alert.department,
+        semester: @alert.semester,
+        sections: @alert.sections
+      }
     end
 
     assert_redirected_to alert_path(assigns(:alert))
@@ -37,7 +44,12 @@ class AlertsControllerTest < ActionController::TestCase
   end
 
   test "should update alert" do
-    put :update, id: @alert, alert: { alerted: @alert.alerted, course: @alert.course, department: @alert.department, user_id: @alert.user_id }
+    put :update, id: @alert, alert: { 
+      course: @alert.course,
+      department: @alert.department,
+      semester: @alert.semester,
+      sections: @alert.sections
+    }
     assert_redirected_to alert_path(assigns(:alert))
   end
 

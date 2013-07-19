@@ -2,12 +2,25 @@
 
 one:
   user_id: 1
-  department: MyString
-  course: MyString
+  department: CSE
+  course: 101
   alerted: false
+  semester: US13
+  sections: [1, 2, 3]
 
 two:
   user_id: 1
-  department: MyString
-  course: MyString
+  department: IAH
+  course: 241A
+  alerted: true
+  semester: FS13
+  sections: [3, 6, 9]
+
+three:
+  user_id: 2
+  department: TES
+  course: 312
   alerted: false
+  semester: SS14
+  sections: [5, 6, 11]
+

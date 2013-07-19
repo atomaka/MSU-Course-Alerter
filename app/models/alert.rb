@@ -30,7 +30,7 @@ class Alert < ActiveRecord::Base
   }
 
   def alerted?
-    @alerted
+    self.alerted
   end
 
   def course_name

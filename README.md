@@ -1,6 +1,8 @@
-sudo apt-get install libpam0g-dev
+```code
+vagrant up
+vagrant ssh
+cd /vagrant
+bundle install
+rails s
+```
 
-/etc/pam.d/rpam:
-
-auth sufficient pam_krb5.so
-account sufficient pam_permit.so
